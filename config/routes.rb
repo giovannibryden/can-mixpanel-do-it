@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
   
-  root 'topics#home'
+  root 'topics#show'
 
   get 'topics/index'
-
-  get 'topics/show'
 
   get 'topics/new'
 
