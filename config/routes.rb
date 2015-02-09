@@ -1,6 +1,20 @@
 Rails.application.routes.draw do
   
-  root 'static#home'
+  root 'topics#home'
+
+  get 'topics/index'
+
+  get 'topics/show'
+
+  get 'topics/new'
+
+  get 'topics/edit'
+
+  get 'topics/create'
+
+  get 'topics/update'
+
+  get 'topics/destroy'
 
   get 'about' => 'static#about'
 
