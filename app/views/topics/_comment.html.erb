@@ -1,12 +1,17 @@
-<p>Post a comment on this topic:</p>
+<div class="comment">
+	<div class="info">
+		<%= comment.name%>
+		<% t = comment.created_at.localtime %>
+		<%== t.strftime("commented on %m/%d/%Y at %I:%M%p") %>
+	</div>
 
-<% form_for(@comment) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :email %>
-  <%= f.text_field :email %>
-  <%= f.label :body %>
-  <%= f.text_area :body %>
-
-  <%= f.submit %>
-<% end %>
+	<div class="body"><%== comment.body %></div>
+	
+	<% if signed_in? %>
+	<div class="info">
+		<%= link_to 'Destroy Comment', comment,
+    :confirm => 'Are you sure?',
+    :method => :delete %>
+  <% end %>
+  </div>
+</div>
