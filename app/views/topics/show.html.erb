@@ -7,4 +7,17 @@
 	</div>
 	<p><%= link_to 'Edit', edit_topic_path(@topic) %>
 	<%= link_to 'Destroy', @topic, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+
+	<p>
+	  <%= form_for(@comment) do |f| %>
+	  <%= f.hidden_field :post_id %>
+	  <h4><%= f.label "Post a comment" %></h4>
+	  <p><%= f.label :name %>*</p>
+	  <p><%= f.text_field :name %></p>
+	  <p><%= f.label :email %>*</p>
+	  <p><%= f.text_field :email %></p>
+	  <p><%= f.text_area :body %></p>
+	  <p><%= f.submit "Post comment" %></p>
+	  <% end %>
+	</p>
 </div>
