@@ -1,2 +1,14 @@
-<h1>Topics#show</h1>
-<p>Find me in app/views/topics/show.html.erb</p>
+<h1>Can Mixpanel Do It?</h1>
+
+<div class="container">
+	<% @topics.each do |topic|%>
+	<div class="topic">
+		<p class="title"><%= topic.topic %>, created on <%= topic.created_at %></p>
+		<div class="body"><%= topic.body %></div>
+	</div>
+	<% end %>
+</div>
+
+<div class="container">
+	<%= link_to "Create a topic", :action => "new" %>
+</div>

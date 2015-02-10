@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :topics
+
   root 'topics#show'
 
   get 'topics/index'
@@ -8,7 +10,7 @@ Rails.application.routes.draw do
 
   get 'topics/edit'
 
-  get 'topics/create'
+  get '/new' => 'topics#new'
 
   get 'topics/update'
 
