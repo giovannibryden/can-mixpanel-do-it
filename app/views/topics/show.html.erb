@@ -1,14 +1,10 @@
 <h1>Can Mixpanel Do It?</h1>
 
 <div class="container">
-	<% @topics.each do |topic|%>
 	<div class="topic">
-		<p class="title"><%= topic.topic %>, created on <%= topic.created_at %></p>
-		<div class="body"><%= topic.body %></div>
+		<h4 class="title"><%= @topic.topic %>, created on <%= @topic.created_at %></h4>
+		<div class="body"><%= @topic.body %></div>
 	</div>
-	<% end %>
-</div>
-
-<div class="container">
-	<%= link_to "Create a topic", :action => "new" %>
+	<p><%= link_to 'Edit', edit_topic_path(@topic) %>
+	<%= link_to 'Destroy', @topic, method: :delete, data: { confirm: 'Are you sure?' } %></p>
 </div>

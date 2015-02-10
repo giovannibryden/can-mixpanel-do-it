@@ -6,11 +6,11 @@ class TopicsController < ApplicationController
   end
 
   def index
-    @topics = Topic.all
+    @topics = Topic.last(5)
   end
 
   def show
-    @topics = Topic.last(5)
+    @topic = Topic.find(params[:id])
   end
 
   def new

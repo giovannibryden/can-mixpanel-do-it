@@ -1,2 +1,16 @@
-<h1>Topics#index</h1>
-<p>Find me in app/views/topics/index.html.erb</p>
+<h1>Can Mixpanel Do It?</h1>
+
+
+<h3>The 5 most recent topics are:</h3>
+<div class="container">
+	<% @topics.each do |topic|%>
+	<div class="topic">
+		<h4 class="title"><%= link_to topic.topic, topic %>, created on <%= topic.created_at %></h4>
+		<div class="body"><%= topic.body %></div>
+	</div>
+	<% end %>
+</div>
+
+<div class="container">
+	<p><%= link_to "Create a topic", :action => "new" %></p>
+</div>
