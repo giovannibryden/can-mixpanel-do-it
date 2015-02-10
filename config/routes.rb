@@ -1,25 +1,12 @@
 Rails.application.routes.draw do
-  
-  get 'users/new'
 
   resources :topics
+  resources :users
 
   root 'topics#index'
-
-  get 'topics/index'
-
-  get 'topics/new'
-
-  get 'topics/edit'
-
   get '/new' => 'topics#new'
 
-  get 'topics/update'
-
-  get 'topics/destroy'
-
   get 'about' => 'static#about'
-
   get 'help' => 'static#help'
 
   # The priority is based upon order of creation: first created -> highest priority.
