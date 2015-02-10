@@ -2,7 +2,7 @@
 
 <div class="container">
 	<div class="topic">
-		<h4 class="title"><%= @topic.topic %>, created on <%= @topic.created_at %></h4>
+		<h4 class="title"><%= @topic.topic %>, <%= @topic.created_at.localtime.strftime("posted on %m/%d/%Y at %I:%M%p") %></h4>
 		<div class="body"><%= @topic.body %></div>
 	</div>
 	<p><%= link_to 'Edit', edit_topic_path(@topic) %>
