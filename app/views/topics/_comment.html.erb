@@ -6,12 +6,11 @@
 	</div>
 
 	<div class="body"><%== comment.body %></div>
-	
-	<% if signed_in? %>
+		
 	<div class="info">
 		<%= link_to 'Destroy Comment', comment,
     :confirm => 'Are you sure?',
     :method => :delete %>
-  <% end %>
+  
   </div>
 </div>
