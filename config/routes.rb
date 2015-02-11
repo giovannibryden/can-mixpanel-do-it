@@ -1,17 +1,16 @@
 Rails.application.routes.draw do
 
-  get 'sessions/new'
-
-  get 'sessions/destroy'
-
   resources :topics
   resources :users
 
   root 'topics#index'
-  get '/new' => 'topics#new'
+  get 'new' => 'topics#new'
 
   get 'about' => 'static#about'
   get 'help' => 'static#help'
+
+  get 'login' => 'sessions#new'
+  get 'logout' => 'sessions#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
