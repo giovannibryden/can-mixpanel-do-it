@@ -12,10 +12,10 @@
 	  <%= form_for(@comment) do |f| %>
 	  <%= f.hidden_field :topic_id, :value => @topic.id %>
 	  <h4><%= f.label "Post a comment" %></h4>
-	  <p><%= f.label :name %></p>
-	  <p><%= f.text_field :name %></p>
-	  <p><%= f.label :email %></p>
-	  <p><%= f.text_field :email %></p>
+	  <p><%= f.label :name %>
+	  <%= f.text_field :name %>
+	  <%= f.label :email %>
+	  <%= f.text_field :email %></p>
 	  <p><%= f.text_area :body %></p>
 	  <p><%= f.submit "Post comment" %></p>
 	  <% end %>
