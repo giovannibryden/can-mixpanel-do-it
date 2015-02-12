@@ -3,7 +3,11 @@ class SessionsController < ApplicationController
   end
 
   def create
-  	render 'new'
+  	@user = user.find_by(:email params[:session][:email].downcase)
+
+  	# Check to see if user exists AND that they can authenticate with the password
+  	if user && user
+  	end
   end	
 
   def destroy

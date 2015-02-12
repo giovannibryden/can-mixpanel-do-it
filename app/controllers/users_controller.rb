@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   	else
   		flash[:notice] = 'Oops!'
   		render 'new'
+    end
   end
 
 
