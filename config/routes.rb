@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :topics
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :comments
+
 
   root 'topics#index'
   get 'new' => 'topics#new'
