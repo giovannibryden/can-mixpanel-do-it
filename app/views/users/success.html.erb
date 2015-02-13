@@ -1,0 +1,8 @@
+<p>You signed up!</p>
+
+<p>We just called mixpanel.alias("<%= @user.email %>");</p>
+
+<script type="text/javascript">
+	mixpanel.alias("<%= @user.email %>");
+	mixpanel.people.set({"$email":"<%= @user.email %>"})
+</script>
