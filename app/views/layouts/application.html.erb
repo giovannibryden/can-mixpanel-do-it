@@ -16,7 +16,13 @@
 	<body>
 
 		<%= render 'shared/header' %>
-		<% flash.each do |name, msg| %><% end %>
+			
+			<% flash.each do |name, msg| %>
+				<div class="<%= name %>">
+					<%= msg %>
+				</div>
+			<% end %>
+
 		<%= yield %>
 		<%= render 'shared/footer' %>
 		<%= debug(params) if Rails.env.development? %>
