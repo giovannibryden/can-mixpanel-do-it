@@ -7,8 +7,8 @@ class UsersController < ApplicationController
   	@user = User.new(user_params)
   	if @user.save
   		flash[:notice] = 'Successfully created an account!'
-  		render 'success'
-      
+  		log_in @user
+      render 'success'
   	else
   		flash[:notice] = 'Oops!'
   		render 'new'
