@@ -8,7 +8,8 @@ class SessionsController < ApplicationController
   	# Check to see if user exists AND that they can authenticate with the password
   	if @user && @user.authenticate(params[:session][:password])
   		flash[:success] = "Whoa. It worked!"
-  		render 'success'
+  		log_in user
+      redirect_to user
   	else
   		flash[:notice] = "Something's wrong!"
       render 'new'
