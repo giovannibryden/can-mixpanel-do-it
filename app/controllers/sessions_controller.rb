@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
   	if user && user.authenticate(params[:session][:password])
   		flash[:success] = "Whoa. It worked!"
   		log_in user
+      remember user
       render 'success'
   	else
   		flash[:notice] = "Something's wrong!"
@@ -22,7 +23,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    log_out
+    log_out if logged_in?
     redirect_to root_path
   end
 end
