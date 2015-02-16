@@ -1,0 +1,9 @@
+<p>Congrats! you logged on!</p>
+
+<p>We just called mixpanel.identify("<%= @user.email %>");</p>
+
+<script type="text/javascript">
+	mixpanel.identify("<%= @user.email %>");
+	mixpanel.people.set({"Last login":"<%= Time.now %>","$name":"<%= @user.name %>","$email":"<%= @user.email %>"});
+	mixpanel.track("Logged on");
+</script>
