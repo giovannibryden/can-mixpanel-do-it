@@ -1,6 +1,6 @@
 class TopicsController < ApplicationController
   
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_topic, only: [:show, :edit, :update, :destroy]
 
   def new
   end
@@ -13,7 +13,6 @@ class TopicsController < ApplicationController
   end
 
   def show
-    @topic = Topic.find(params[:id])
     @comment = Comment.new(:topic => @topic)
     @tag = Tag.new(:topic => @topic)
   end
@@ -49,7 +48,7 @@ end
 private
 
   # Use callbacks to share common setup or constraints between actions.
-  def set_post
+  def set_topic
     @topic = Topic.find(params[:id])
   end
 

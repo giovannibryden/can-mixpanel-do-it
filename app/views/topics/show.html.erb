@@ -16,6 +16,10 @@
 		<% end %>
 	</div>
 
+	<div class="tag_wrapper">
+	  <%= render :partial => 'tag', :collection => @topic.tags %>  
+	</div>
+
 	<div class="form">
 	  <%= form_for(@comment) do |f| %>
 	  <%= f.hidden_field :topic_id, :value => @topic.id %>
@@ -31,10 +35,6 @@
 
 	<div class="comment_wrapper">
 	  <%= render :partial => 'comment', :collection => @topic.comments %>  
-	</div>
-
-		<div class="tag_wrapper">
-	  <%= render :partial => 'tag', :collection => @topic.tags %>  
 	</div>
 </div>
 
