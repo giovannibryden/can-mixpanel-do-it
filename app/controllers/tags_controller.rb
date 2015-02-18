@@ -12,12 +12,15 @@ class TagsController < ApplicationController
 	end
 
 	def destroy
-		@tag = Tag.find_by(params[:id])
+		@topic = Topic.find_by(:id params[:topic_id])
+		@tag = @topic.tags.find(:id)
+		@tag.destroy
+		redirect_to :back
 	end
 
 private
 
-def tag_params
-	params.require(:tag).permit(:name,:topic_id)
-end
+	def tag_params
+		params.require(:tag).permit(:name,:topic_id)
+	end
 end
