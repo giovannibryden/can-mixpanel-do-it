@@ -11,6 +11,10 @@ class TagsController < ApplicationController
 		end
 	end
 
+	def destroy
+		@tag = Tag.find_by(params[:id])
+	end
+
 private
 
 def tag_params

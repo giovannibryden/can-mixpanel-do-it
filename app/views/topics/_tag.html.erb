@@ -1,1 +1,6 @@
-<p>This is a partial for tags, duh.</p>
+<div class="tag">
+	<%= tag.name  %>
+	<%= link_to ' X', tag,
+    :confirm => 'Are you sure?',
+    :method => :delete %>
+</div>
