@@ -12,8 +12,6 @@ class TagsController < ApplicationController
 	end
 
 	def destroy
-		@topic = Topic.find_by(:id params[:topic_id])
-		@tag = @topic.tags.find(:id)
 		@tag.destroy
 		redirect_to :back
 	end
