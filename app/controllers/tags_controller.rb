@@ -1,8 +1,7 @@
 class TagsController < ApplicationController
-	before_action :set_tag
 
 	def create
-		@topic = Topic.find_by(id: params[:topic_id])
+		
 		@tag = Tag.new(tag_params)
 		if @tag.save
 			flash[:success] = "Successfully created a tag!"
@@ -14,7 +13,7 @@ class TagsController < ApplicationController
 	end
 
 	def destroy
-		@tag = Tag.find_by(:id)
+		tag = Tag.find(params[:id])
 		tag.destroy
 		redirect_to :back
 	end
