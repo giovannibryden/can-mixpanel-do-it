@@ -1,7 +1,12 @@
 <h1>Can Mixpanel Do It?</h1>
 
+<% length = @topics.length %>
+<% if length == 0 %>
+	<h3>There's nothing here! Create a topic!</h3>
+<% else %>
+	<h3>The <%= length == 1 ? "most recent topic is:" : length.to_s+" most recent topics are:" %></h3>
+<% end %>
 
-<h3>The 5 most recent topics are:</h3>
 <div class="container">
 	<% @topics.each do |topic|%>
 	<div class="topic">
