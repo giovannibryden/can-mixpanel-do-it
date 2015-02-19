@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+
 	def create
 		@comment = Comment.new(comment_params)
 		if @comment.save
@@ -11,7 +12,9 @@ class CommentsController < ApplicationController
 	end
 
 	def destroy
-		@comment = Comment.find_by(params[:id])
+		comment = Comment.find(params[:id])
+		comment.destroy
+		redirect_to :back
 	end
 
 	def show
