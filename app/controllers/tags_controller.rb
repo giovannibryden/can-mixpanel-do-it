@@ -1,4 +1,6 @@
 class TagsController < ApplicationController
+	before_action :set_tag
+
 	def create
 		@topic = Topic.find_by(id: params[:topic_id])
 		@tag = Tag.new(tag_params)
@@ -12,7 +14,8 @@ class TagsController < ApplicationController
 	end
 
 	def destroy
-		@tag.destroy
+		@tag = Tag.find_by(:id)
+		tag.destroy
 		redirect_to :back
 	end
 
