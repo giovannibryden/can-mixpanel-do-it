@@ -42,6 +42,9 @@ class TopicsController < ApplicationController
   end
 
   def destroy
+    @topic.destroy
+    flash[:success] = "Topic successfully deleted."
+    redirect_to root_url
   end
 end
 
