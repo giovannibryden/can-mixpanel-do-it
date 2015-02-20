@@ -1,6 +1,7 @@
 class TopicsController < ApplicationController
   
   before_action :set_topic, only: [:show, :edit, :update, :destroy]
+  before_action :require_login, only: [:create, :destroy]
 
   def new
   end
@@ -56,4 +57,11 @@ private
 
   def topic_params
     params.require(:topic).permit(:topic,:body)
+  end
+
+  def require_login
+    if !logged_in?
+      flash[:error] = "Log in to perform this action."
+      redirect_to root_url
+    end
   end
