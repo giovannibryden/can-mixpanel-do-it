@@ -39,4 +39,12 @@ module SessionsHelper
 		cookies.delete(:user_id)
 		cookies.delete(:remember_token)
 	end
+
+# Require login. To be called before certain actions.
+	def require_login
+	  if !logged_in?
+	    flash[:error] = "Log in to perform this action."
+	    redirect_to root_url
+	  end
+	end
 end

@@ -59,9 +59,9 @@ private
     params.require(:topic).permit(:topic,:body)
   end
 
-  def require_login
-    if !logged_in?
-      flash[:error] = "Log in to perform this action."
-      redirect_to root_url
-    end
-  end
+  # def require_login
+  #   if !logged_in?
+  #     flash[:error] = "Log in to perform this action."
+  #     redirect_to root_url
+  #   end
+  # end

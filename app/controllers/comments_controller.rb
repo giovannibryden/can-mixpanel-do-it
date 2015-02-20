@@ -1,5 +1,7 @@
 class CommentsController < ApplicationController
 
+before_action :require_login, only: [:create, :destroy]
+
 	def create
 		@comment = Comment.new(comment_params)
 		if @comment.save
