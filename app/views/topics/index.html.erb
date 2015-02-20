@@ -16,9 +16,12 @@
 	<% end %>
 </div>
 
+
+<% if logged_in? %>
 <div class="container">
 	<p><%= link_to "Create a topic", :action => "new" %></p>
 </div>
+<% end %>
 
 <!-- Track home page views -->
 <script type="text/javascript">
