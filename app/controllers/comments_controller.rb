@@ -15,7 +15,11 @@ before_action :require_login, only: [:create, :destroy]
 
 	def destroy
 		comment = Comment.find(params[:id])
-		comment.destroy
+		if current_user.email == comment.email
+			comment.destroy
+		else
+			flash[:notice] = "You may only delete your own comments."
+		end
 		redirect_to :back
 	end
 

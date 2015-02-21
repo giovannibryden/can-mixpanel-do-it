@@ -8,6 +8,7 @@
 	<p><%= link_to 'Edit', edit_topic_path(@topic) %>
 	<%= link_to 'Destroy', @topic, method: :delete, data: { confirm: 'Are you sure?' } %></p>
 
+<% if logged_in? %>
 	<div class="form">
 		<%= form_for(@tag) do |f|%>
 		<%= f.hidden_field :topic_id, :value => @topic.id %>
@@ -15,23 +16,24 @@
 		<p><%= f.text_field :name, :placeholder => "Enter a tag" %></p>
 		<% end %>
 	</div>
+<% end %>
 
 	<div class="tag_wrapper">
 	  <%= render :partial => 'tag', :collection => @topic.tags %>  
 	</div>
 
+<% if logged_in? %>
 	<div class="form">
 	  <%= form_for(@comment) do |f| %>
 	  <%= f.hidden_field :topic_id, :value => @topic.id %>
+	  <%= f.hidden_field :email, :value => @current_user.email %>
+	  <%= f.hidden_field :name, :value =>  @current_user.name %>
 	  <h4><%= f.label "Post a comment" %></h4>
-	  <p><%= f.label :name %>
-	  <%= f.text_field :name %>
-	  <%= f.label :email %>
-	  <%= f.text_field :email %></p>
 	  <p><%= f.text_area :body %></p>
 	  <p><%= f.submit "Post comment" %></p>
 	  <% end %>
 	</div>
+<% end %>
 
 	<div class="comment_wrapper">
 	  <%= render :partial => 'comment', :collection => @topic.comments %>  
