@@ -8,7 +8,7 @@ before_action :require_login, only: [:create, :destroy]
 			flash[:success] = "Comment posted successfully."
 			redirect_to :back
 		else
-			flash[:notice] = "Error :("
+			flash[:notice] = "Comment was not posted successfully."
 			redirect_to :back
 		end
 	end
