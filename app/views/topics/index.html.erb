@@ -1,16 +1,15 @@
-<h1>Can Mixpanel Do It?</h1>
-
-<% length = @topics.length %>
-<% if length == 0 %>
-	<h3>There's nothing here! Create a topic!</h3>
-<% else %>
-	<h3><%= length == 1 ? "The most recent topic is:" : "The "+length.to_s+" most recent topics are:" %></h3>
-<% end %>
+<div class="container">	<% length = @topics.length %>
+	<% if length == 0 %>
+		<h3>There's nothing here! Create a topic!</h3>
+	<% else %>
+		<h3><%= length == 1 ? "The most recent topic is:" : "The "+length.to_s+" most recent topics are:" %></h3>
+	<% end %>
+</div>
 
 <div class="container">
 	<% @topics.each do |topic|%>
 	<div class="topic">
-		<h4 class="title"><%= link_to topic.topic, topic %>, <%= topic.created_at.localtime.strftime("posted on %m/%d/%Y at %I:%M%p") %></h4>
+		<h4 class="title"><%= link_to topic.topic, topic %>, <%= topic.created_at.localtime.strftime("posted on %m/%d/%Y at %I:%M%p") %> by <%= </h4>
 		<div class="body"><%= topic.body %></div>
 	</div>
 	<% end %>

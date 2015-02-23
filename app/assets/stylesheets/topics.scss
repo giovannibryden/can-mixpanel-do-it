@@ -2,6 +2,30 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-html {
+* {
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin:0;
+	padding:0;
+}
+
+.container {
+	margin-top: 10px;
+	padding: 0;
+}
+
+.topic {
+	max-width: 100%;
+	min-width: 320px;
+	padding:5px;
+
+	.title {
+		padding:0;
+	}
+
+	.body {
+		padding:5px;
+	}
 }
