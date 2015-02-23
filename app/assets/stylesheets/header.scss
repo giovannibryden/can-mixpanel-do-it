@@ -1,3 +1,26 @@
-header {
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 	
+	header {
+		margin:auto;
+		text-align:center;
+		clear:bottom;
+		.title_block {
+			padding:20px;
+		}	
+
+		.nav {
+			a {
+				text-decoration: none;
+				li {
+					border-radius: 5px;
+					max-width:640px;
+					min-width:300px;
+					line-height: 30px;
+					margin:5px auto 5px auto;
+					background-color:#ddd;
+				}
+			}
+		}
+	}
 }
