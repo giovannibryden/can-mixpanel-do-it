@@ -43,9 +43,14 @@ class TopicsController < ApplicationController
   end
 
   def destroy
-    @topic.destroy
-    flash[:success] = "Topic successfully deleted."
-    redirect_to root_url
+    if current_user.email == @topic.author
+      @topic.destroy
+      flash[:success] = "Topic successfully deleted."
+      redirect_to root_url
+    else
+      flash[:notice] = "You may only delete your own topics."
+      redirect_to :back
+    end
   end
 end
 
