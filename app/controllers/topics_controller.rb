@@ -56,7 +56,7 @@ private
   end
 
   def topic_params
-    params.require(:topic).permit(:topic,:body)
+    params.require(:topic).permit(:topic,:body,:user_id,:author)
   end
 
   # def require_login
