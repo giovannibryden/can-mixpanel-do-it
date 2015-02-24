@@ -5,8 +5,16 @@
 		text-align:center;
 		clear:bottom;
 		padding:20px 30px 20px 30px;
+		text-decoration: none;
+
 		.title_block {
 			margin-bottom: 20px;
+
+			a {
+				h1 {
+					text-decoration: none;
+				}
+			}
 		}	
 
 		.nav {
@@ -25,7 +33,7 @@
 	}
 }
 
-@media only screen and (min-device-width : 6px) {
+@media only screen and (min-device-width : 640px) {
 
 	header {
 		margin:auto;

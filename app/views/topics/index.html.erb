@@ -1,28 +1,33 @@
-<div class="container">	<% length = @topics.length %>
-	<% if length == 0 %>
-		<h3>There's nothing here! Create a topic!</h3>
-	<% else %>
-		<h3><%= length == 1 ? "The most recent topic is:" : "The "+length.to_s+" most recent topics are:" %></h3>
-	<% end %>
-</div>
-
-<div class="container">
-	<% @topics.each do |topic|%>
-	<div class="topic">
-		<h4 class="title"><%= link_to topic.topic, topic %>, <%= topic.created_at.localtime.strftime("posted on %m/%d/%Y at %I:%M%p") %> by <%= topic.author %></h4>
-		<div class="body"><%= topic.body %></div>
+<div class="index">
+	
+	<div class="subheading">
+		<% length = @topics.length %>
+		<% if length == 0 %>
+			<h3>There's nothing here! Log in and create a topic.</h3>
+		<% else %>
+			<h3><%= length == 1 ? "The most recent topic is:" : "The "+length.to_s+" most recent topics are:" %></h3>
+		<% end %>
 	</div>
-	<% end %>
-</div>
 
+	<div class="container">
+		<% @topics.each do |topic|%>
+		<div class="topic">
+			<h4 class="title"><%= link_to topic.topic, topic %>, <%= topic.created_at.localtime.strftime("posted on %m/%d/%Y at %I:%M%p") %> by <%= topic.author %></h4>
+			<div class="body"><%= topic.body %></div>
+		</div>
+		<% end %>
+	</div>
 
-<% if logged_in? %>
-<div class="container">
-	<p><%= link_to "Create a topic", :action => "new" %></p>
-</div>
-<% end %>
+<!-- 
+	<% if logged_in? %>
+		<div class="container">
+			<p><%= link_to "Create a topic", :action => "new" %></p>
+		</div>
+	<% end %> 
+-->
 
-<!-- Track home page views -->
-<script type="text/javascript">
-	mixpanel.track("View landing page");
-</script>
+	<!-- Track home page views -->
+	<script type="text/javascript">
+		mixpanel.track("View landing page");
+	</script>
+	</div>
