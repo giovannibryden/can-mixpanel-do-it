@@ -14,6 +14,7 @@ class TopicsController < ApplicationController
   end
 
   def show
+
     @comment = Comment.new(:topic => @topic)
     @tag = Tag.new(:topic => @topic)
   end
