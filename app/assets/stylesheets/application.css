@@ -60,3 +60,10 @@ q:before, q:after {
 blockquote, q {
 	quotes: "" "";
 }
+
+.debug_dump {
+	width:80%;
+	margin:auto;
+	padding:4%;
+	background-color: #eee;
+}
