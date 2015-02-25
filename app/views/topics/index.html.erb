@@ -12,7 +12,15 @@
 	<div class="container">
 		<% @topics.each do |topic|%>
 		<div class="topic">
-			<span class="title"><%= link_to topic.topic, topic %>, <%= topic.created_at.localtime.strftime("posted on %m/%d/%Y at %I:%M%p") %> by <%= topic.author %></span>
+			<span class="title">
+				<%= link_to topic.topic, topic %>,
+			</span> 
+			<span class="date">
+				<%= topic.created_at.localtime.strftime("posted on %m/%d/%Y at %I:%M%p") %>
+			</span>
+			<span class="author">
+				by <%= topic.author %>
+			</span>
 			<div class="body"><%= topic.body %></div>
 		</div>
 		<% end %>
