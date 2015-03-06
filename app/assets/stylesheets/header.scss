@@ -3,9 +3,12 @@
 	header {
 		margin:auto;
 		text-align:center;
+		max-width:96%;
 		clear:bottom;
 		padding:20px 30px 20px 30px;
+		margin-bottom:20px;
 		text-decoration: none;
+		border-bottom: 2px solid #eee;
 
 		.title_block {
 			margin-bottom: 20px;
@@ -26,7 +29,7 @@
 					min-width:300px;
 					line-height: 30px;
 					margin:5px auto 5px auto;
-					background-color:#eee;
+					background-color:#e8e8e8;
 				}
 			}
 		}
