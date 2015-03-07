@@ -61,9 +61,36 @@ blockquote, q {
 	quotes: "" "";
 }
 
+/*Global type shit*/
+
 .debug_dump {
 	width:80%;
 	margin:auto;
 	padding:4%;
 	background-color: #eee;
+}
+
+.notifications {
+	height:20px;
+	vertical-align: center;
+}
+
+/*Mobile*/
+@media only screen and (min-device-width : 320px) and (max-device-width : 641px) {
+	.success {
+		text-align: center;
+		margin:auto;
+		z-index:99999;
+		color: #137209;
+	}	
+}
+
+/*Desktop*/
+@media only screen and (min-device-width : 640px) {
+	.success {
+		text-align: center;
+		margin:auto;
+		z-index:99999;
+		color: #137209;
+	}
 }

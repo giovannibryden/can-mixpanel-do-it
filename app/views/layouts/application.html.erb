@@ -14,18 +14,28 @@
 			<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 			
 		<!-- end Mixpanel -->
+
+		<script type="text/javascript">
+		$(document).ready(function(){
+		  setTimeout(function(){
+		    $('div.notification').fadeOut();
+		  }, 5000);
+		 })
+		</script>
 	</head>
 
 	<body>
 		<header>
 			<%= render 'shared/header' %>
 		</header>
-			
+
+		<div class="notifications">
 			<% flash.each do |name, msg| %>
-				<div class="<%= name %>">
+				<div class="<%= name %> notification">
 					<%= msg %>
 				</div>
 			<% end %>
+		</div>
 
 		<div class="content_wrapper">
 			<%= yield %>
