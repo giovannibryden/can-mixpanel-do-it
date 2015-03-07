@@ -30,7 +30,7 @@
 		</div>
 
 	<% if logged_in? %>
-		<div class="form">
+		<div class="comment_form">
 		  <%= form_for(@comment) do |f| %>
 		  <%= f.hidden_field :topic_id, :value => @topic.id %>
 		  <%= f.hidden_field :email, :value => @current_user.email %>
