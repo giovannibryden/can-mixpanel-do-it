@@ -31,9 +31,9 @@
 
 		<div class="notifications">
 			<% flash.each do |name, msg| %>
-				<div class="<%= name %> notification">
+				<marquee scrollamount="15" loop="1" class="<%= name %> notification">
 					<%= msg %>
-				</div>
+				</marquee>
 			<% end %>
 		</div>
 
