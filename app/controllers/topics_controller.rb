@@ -10,11 +10,12 @@ class TopicsController < ApplicationController
   end
 
   def index
-    @topics = Topic.last(5)
+    @delete_tag_button = false
+    @topics = Topic.last(5).reverse()
   end
 
   def show
-
+    @delete_tag_button = true
     @comment = Comment.new(:topic => @topic)
     @tag = Tag.new(:topic => @topic)
   end

@@ -1,4 +1,6 @@
 <div class="tag">
 	<%= tag.name  %>
-	<%= link_to ' X', tag, :method => 'delete' %>
+	<% if @delete_tag_button %>
+		<%= link_to ' X', tag, :method => 'delete' %>
+	<% end %>
 </div>
