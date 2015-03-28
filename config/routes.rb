@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   root 'topics#index'
   get 'new' => 'topics#new'
+  get 'search' => 'topics#search'
+  post 'search' => 'topics#results'
 
   get 'about' => 'static#about'
   get 'help' => 'static#help'

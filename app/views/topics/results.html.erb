@@ -1,0 +1,17 @@
+<div class="results">
+	<div class="container">	
+		
+		<div class="subheading">
+			<p>You searched for: <%= @search %></p>
+		</div>
+
+		<div class="body">		
+			<ul class="results">
+			  <% @topics.each do |topic| %>
+			  	<li class="topic"><%= link_to topic.topic, :action => 'show', :id => topic.id  %></li>
+			  	<li class="body"><%= topic.body %></li>
+			  <% end %>
+			</ul>
+		</div>
+	</div>
+</div>
