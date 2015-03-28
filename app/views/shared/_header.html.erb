@@ -2,7 +2,7 @@
 
 <ul class="nav">
 	
-	<%= link_to ('<li>Search</li>').html_safe, root_path %>
+	<%= link_to ('<li id="search_nav_link">Search</li>').html_safe, "#" %>
 	
 	<% if logged_in? %>
 		<%= link_to ("<li>Create topic</li>").html_safe, new_topic_url %>
