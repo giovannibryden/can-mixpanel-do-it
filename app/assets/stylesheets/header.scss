@@ -1,5 +1,6 @@
+// Mobile layout styles
 @media only screen and (min-device-width : 320px) and (max-device-width : 641px) {
-	
+
 	header {
 		margin:auto;
 		background-color: #f7f7f7;
@@ -40,14 +41,45 @@
 	}
 }
 
+// Desktop layout styles
 @media only screen and (min-device-width : 640px) {
+
+	#search {
+		display:inline;
+		width:250px;
+		height:20px;
+
+		input[type="text"] {
+			width:162px;
+			float:right;
+			margin:0 10px 0px 0;
+			border-radius:3px;
+			font-size:13px;
+			padding:2px;
+		}
+
+		input[type="submit"] {
+			float:right;
+			border:0;
+			box-shadow: 0 1px rgba(0,0,0,0.05);
+			text-shadow: 0 1px rgba(0,0,0,0.5);
+			text-align:center;
+			min-width:75px;
+			font-size:13px;
+			color:white;
+			padding:6px;
+			background-color: #5887CA;
+			margin:0 35px 5px 0;
+			border-radius:3px;
+	}
+}
 
 	header {
 		margin:auto;
 		text-align: center;
 		min-width:640px;
 		max-width:96%;
-		padding:20px;
+		padding:20px 20px 0 20px;
 		height:50px;
 
 		.title_block {

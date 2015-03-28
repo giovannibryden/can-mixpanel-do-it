@@ -19,9 +19,12 @@ a:hover, a:visited {
 .content_wrapper {
 	margin:auto;
 	text-align:left;
-	clear:bottom;
+	clear:both;
 	padding:0 30px 10px 30px;
 	min-height:300px;
+}
+
+.container {
 	-webkit-animation: fadein .7s;
 }
 
