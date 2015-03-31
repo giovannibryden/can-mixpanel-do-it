@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   root 'topics#index'
   get 'new' => 'topics#new'
   get 'search' => 'topics#search'
+  get 'search/:search' => 'topics#results', :as => :query
   post 'search' => 'topics#results'
 
   get 'about' => 'static#about'

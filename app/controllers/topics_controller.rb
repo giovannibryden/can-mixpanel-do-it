@@ -44,9 +44,6 @@ class TopicsController < ApplicationController
   def update
   end
 
-  def search
-  end
-
   def results
     @search = params[:search]
     @topics = Topic.find_by_sql ["SELECT * FROM topics WHERE topic LIKE ?","%"+params[:search]+"%"]
