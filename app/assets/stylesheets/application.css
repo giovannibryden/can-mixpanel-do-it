@@ -75,6 +75,11 @@ blockquote, q {
 	vertical-align: center;
 }
 
+.no_decoration {
+	text-decoration: none;
+	color:inherit;
+}
+
 /*Mobile*/
 @media only screen and (min-device-width : 320px) and (max-device-width : 641px) {
 	.success {

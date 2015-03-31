@@ -1,6 +1,9 @@
 <div class="tag">
-	<%= tag.name  %>
-	<% if @delete_tag_button %>
-		<%= link_to ' X', tag, :method => 'delete', :class => 'delete_tag_button' %>
-	<% end %>
+	<% encoded_query = "/search/"+url_encode(tag.name) %>
+	<a class="no_decoration" href=<%= encoded_query %>>
+		<%= tag.name  %>
+		<% if @delete_tag_button %>
+			<%= link_to 'X', tag, :method => 'delete', :class => 'delete_tag_button' %>
+		<% end %>
+	</a>	
 </div>
