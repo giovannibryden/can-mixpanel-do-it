@@ -46,7 +46,7 @@ class TopicsController < ApplicationController
 
   def results
     @search = params[:search]
-    @topics = Topic.find_by_sql ["SELECT * FROM topics WHERE topic LIKE ?","%"+params[:search]+"%"]
+    @topics = Topic.find_by_sql ["SELECT * FROM topics INNER JOIN tags ON topics.id = tags.topic_id WHERE topics.topic LIKE ? or tags.name LIKE ?","%"+params[:search]+"%","%"+params[:search]+"%"]
   end
 
   def destroy
