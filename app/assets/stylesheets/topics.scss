@@ -187,6 +187,24 @@ a:hover, a:visited {
 				padding-bottom: 20px;
 				margin-bottom: 20px;
 				border-bottom: solid 1px #ddd;
+
+				.delete {
+
+					a {
+						text-decoration: none;
+					}
+
+
+					box-shadow: 0 1px rgba(0,0,0,0.05);
+					text-shadow: 0 1px rgba(0,0,0,0.5);
+					text-align:center;
+					min-width:75px;
+					font-size:13px;
+					color:white;
+					padding:6px;
+					background-color: #921111;
+					border-radius:3px;
+				}
 			}
 
 			.body {
