@@ -1,17 +1,28 @@
 <div class="results">
-	<div class="container">	
-		
-		<div class="subheading">
-			<p>You searched for: <%= @search %></p>
-		</div>
 
-		<div class="body">		
-			<ul class="results">
-			  <% @topics.each do |topic| %>
-			  	<li class="topic"><%= link_to topic.topic, :action => "show", :id => topic.topic_id  %></li>
-			  	<li class="body"><%= topic.body %></li>
-			  <% end %>
-			</ul>
+	<div class="subheading">
+		<h3>You searched for: <%= @search %></h3>
+	</div>
+
+	<div class="container">
+		<% @topics.each do |topic|%>
+		<div class="topic">
+			<span class="title">
+				<%= link_to topic.topic, :action => "show", :id => topic.topic_id %>,
+			</span> 
+			<span class="date">
+				<%= topic.created_at.localtime.strftime("posted on %m/%d/%Y at %I:%M%p") %>
+			</span>
+			<span class="author">
+				by <%= topic.author %>
+			</span>
+			<div class="body"><%= topic.body %></div>
+			
+			<div class="tag_wrapper">
+				<div class="tags"><%= render :partial => 'tag', :collection => topic.tags.last(4) %></div>
+			</div>
+
 		</div>
+		<% end %>
 	</div>
 </div>
