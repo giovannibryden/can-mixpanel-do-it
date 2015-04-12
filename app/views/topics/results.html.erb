@@ -19,7 +19,7 @@
 			<div class="body"><%= topic.body %></div>
 			
 			<div class="tag_wrapper">
-				<div class="tags"><%= render :partial => 'tag', :collection => topic.tags.last(4) %></div>
+				<div class="tags"><%= render :partial => 'tag', :collection => topic.tags %></div>
 			</div>
 
 		</div>
