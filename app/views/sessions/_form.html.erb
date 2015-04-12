@@ -1,11 +1,18 @@
-<p>This is a login form.</p>
-
 <%= form_for(:session, url:login_path ) do |f| -%>
 
-<p><%= f.label :email %> <%= f.email_field :email %></p>
-<p><%= f.label :password %> <%= f.password_field :password %></p>
-<p><%= f.label :remember_me %> <%= f.check_box :remember_me %></p>
+<div class="field">
+	<%= f.label :email, :class => "title" %> 
+	<%= f.email_field :email %>
+</div>
+<div class="field">
+	<%= f.label :password, :class => "title" %> 
+	<%= f.password_field :password %>
+</div>
+<div class="field remember_me">
+	<%= f.label :remember_me, :class => "title" %> 
+	<%= f.check_box :remember_me %>
+</div>
 
-<p><%= f.submit "Log in"%></p>
+<div class="field submit"><%= f.submit "Log in"%></div>
   
 <% end -%>
