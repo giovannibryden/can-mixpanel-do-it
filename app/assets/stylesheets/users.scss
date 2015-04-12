@@ -34,7 +34,6 @@
 
 			.title {
 				font-size: 18px;
-				padding:1px;
 			}
 
 			.remember_me {
@@ -48,7 +47,7 @@
 				margin:auto;
 			}
 
-			input[type="email"], input[type="password"] {
+			input[type="email"], input[type="password"], input[type="text"] {
 				float:right;
 				height:20px;
 				width:162px;
@@ -64,7 +63,7 @@
 				text-shadow: 0 1px rgba(0,0,0,0.5);
 				text-align:center;
 				min-width:75px;
-				font-size:13px;
+				font-size:16px;
 				color:white;
 				padding:6px;
 				background-color: #5887CA;
