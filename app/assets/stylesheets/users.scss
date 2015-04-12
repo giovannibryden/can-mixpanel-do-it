@@ -1,3 +1,77 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Account creation page desktop
+@media only screen and (min-device-width : 640px) {
+	.account_create {
+
+		width:92%;
+		margin:auto;
+
+		.content_wrapper {
+			padding-top:20px;
+			min-width: 640px;
+			margin:auto;
+			text-align: center;
+		}
+
+		.subheading {
+			font-size: 20px;
+			margin-bottom: 40px;
+			text-align: center;
+		}
+
+		.container {
+			width:300px;
+			margin:auto;
+			text-align: center;
+
+			.field {
+				float:right;
+				width:100%;
+			}
+
+			.title {
+				font-size: 18px;
+				padding:1px;
+			}
+
+			.remember_me {
+				clear:both;
+				margin:auto;
+				text-align: center;
+			}
+
+			.submit {
+				clear:both;
+				margin:auto;
+			}
+
+			input[type="email"], input[type="password"] {
+				float:right;
+				height:20px;
+				width:162px;
+				margin:0 10px 10px 0;
+				border-radius:3px;
+				font-size:13px;
+				padding:2px;
+			}
+
+			input[type="submit"] {
+				border:0;
+				box-shadow: 0 1px rgba(0,0,0,0.05);
+				text-shadow: 0 1px rgba(0,0,0,0.5);
+				text-align:center;
+				min-width:75px;
+				font-size:13px;
+				color:white;
+				padding:6px;
+				background-color: #5887CA;
+				margin:auto;
+				border-radius:3px;
+				margin-top:35px;
+			}
+		}
+	}
+}
